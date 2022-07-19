@@ -20,7 +20,7 @@ In the Google Developers Console:
 
 ## How to Call
 
-First, we simply load the PyDaisi package:
+After generating your JSON Service Account key per the above instructions, we simply load the PyDaisi package:
 
 ```python
 import pydaisi as pyd
@@ -29,13 +29,13 @@ import pydaisi as pyd
 Next, we connect to the Daisi:
 
 ```python
-twitter_search = pyd.Daisi("erichare/Twitter Search")
+gds = pyd.Daisi("erichare/Google Data Studio")
 ```
 
-Next, let's provide a query to search Twitter with:
+Then, we call the Daisi:
 
 ```python
-twitter_search.fetch_tweets(query="Daisi", count=10).value
+gds.store_in_gs(df, email, service_account).value
 ```
 
-And that's it! We have a clean dataframe containing the author of the tweet and the text of the tweet based on the query!
+Passing in the values of `df`, `email`, and `service_account` as a path to your service account JSON.
