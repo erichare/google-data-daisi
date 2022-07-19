@@ -72,6 +72,7 @@ def st_ui():
         uploaded_file = st.file_uploader("Choose a CSV", type=["csv"])
         email = st.text_input('Email Address', '')
         service_account = st.file_uploader("Service Account JSON", type=["json"])
+        title = st.text_input('Spreadsheet Title', 'My Spreadsheet from Daisi')
         append = st.checkbox("Append to Sheet?", False)
 
     f_name = ""
@@ -83,10 +84,10 @@ def st_ui():
         ```python
         import pydaisi as pyd
 
-        gds = pyd.Daisi("erichare/Google Data Studio")
+        gds = pyd.Daisi("erichare/Google Spreadsheets")
 
         with open("{service_account}", "r") as my_f:
-            result = gds.store_in_gs("{f_name}", email="{email}", service_account=my_f.read(), append={append}).value
+            result = gds.store_in_gs("{f_name}", email="{email}", service_account=my_f.read(), title="{title}", append={append}).value
         
         result
         ```
@@ -94,7 +95,7 @@ def st_ui():
 
     if uploaded_file and email and service_account:
         with st.spinner("Communicating with Google API, please wait..."):
-            result = store_in_gs(uploaded_file, email, service_account, append=append)
+            result = store_in_gs(uploaded_file, email, service_account, title=title, append=append)
 
             st.markdown(f"[Click Here]({result}) to view your Google Sheet!")
 
