@@ -79,6 +79,10 @@ def st_ui():
     if uploaded_file:
         f_name = uploaded_file.name
 
+    s_name = ""
+    if service_account:
+        s_name = service_account.name
+
     with st.expander("Inference with PyDaisi", expanded=True):
         st.markdown(f"""
         ```python
@@ -86,7 +90,7 @@ def st_ui():
 
         gds = pyd.Daisi("erichare/Google Spreadsheets")
 
-        with open("{service_account.name}", "r") as my_f:
+        with open("{s_name}", "r") as my_f:
             result = gds.store_in_gs("{f_name}", email="{email}", service_account=my_f.read(), title="{title}", append={append}).value
         
         result
