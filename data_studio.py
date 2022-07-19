@@ -98,10 +98,11 @@ def st_ui():
         """)
 
     if uploaded_file and email and service_account:
-        with st.spinner("Communicating with Google API, please wait..."):
-            result = store_in_gs(uploaded_file, email, service_account, title=title, append=append)
+        if st.button('Load Google Spreadsheet Data'):
+            with st.spinner("Communicating with Google API, please wait..."):
+                result = store_in_gs(uploaded_file, email, service_account, title=title, append=append)
 
-            st.markdown(f"[Click Here]({result}) to view your Google Sheet!")
+                st.markdown(f"[Click Here]({result}) to view your Google Sheet!")
 
 if __name__ == "__main__":
     st_ui()
