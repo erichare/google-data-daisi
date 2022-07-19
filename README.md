@@ -13,7 +13,7 @@ In the [Google Developers Console](https://console.cloud.google.com/apis/dashboa
 5. Change the email to something you’ll recognize, i.e. “gd-api-service-account@gmail.com”.
 6. Click “Create and Continue” and select a role, i.e. Basic > Viewer, then click “Done”.
 7. Copy the email address created, i.e. gsc-api-service-account@xxxxxxxxxxx.iam.gserviceaccount.com
-8. In Credentials > Service Accounts click the email address added
+8. In Credentials > Service Accounts, click the email address added
 9. Click “Keys” > “Add key” > “Create new key” > “JSON” > “Create”
 10. Download the key and give it a name to identify what it does, i.e. mysite-client-secrets.json
 
