@@ -28,7 +28,7 @@ import pydaisi as pyd
 Next, we connect to the Daisi:
 
 ```python
-gds = pyd.Daisi("erichare/Google Data Studio")
+gds = pyd.Daisi("erichare/Google Spreadsheets")
 ```
 
 Then, we call the Daisi:
