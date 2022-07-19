@@ -1,22 +1,21 @@
-# Google Data Studio Storage with Daisies
+# Google Spreadsheets with Daisies
 
 ## Prerequisites
 
-First, you must have a service account created. Please follow the very useful guide from [PracticalDataScience](https://practicaldatascience.co.uk/data-engineering/how-to-create-a-google-service-account-client-secrets-json-key).
+To use this Daisi, you must first have a service account created for your Google Account with the Google Drive API enabled. Please use the following steps to create this service account:
 
-In the Google Developers Console:
+In the [Google Developers Console](https://console.cloud.google.com/apis/dashboard):
 
-1. Go to the Google Developers Console
-2. Ensure you are logged in to the correct Google account
-3. Search for the API service you wish to enable, the "Google Drive API", and click "Enable"
-4. Go to APIs and Services > Credentials and click “+ Create Credentials” and select “Service Account”
-5. Enter a name for the service account, i.e. “Google Search Console API service account”.
-6. Change the email to something you’ll recognise, i.e. “gsc-api-service-account@”.
-7. Click “Create and Continue” and select a role, i.e. Basic > Viewer, then click “Done”.
-8. Copy the email address created, i.e. gsc-api-service-account@xxxxxxxxxxx.iam.gserviceaccount.com
-9. In Credentials > Service Accounts click the email address added
-10. Click “Keys” > “Add key” > “Create new key” > “JSON” > “Create”
-11. Download the key and give it a name to identify what it does, i.e. mysite-client-secrets.json
+1. Ensure you are logged in to the correct Google account
+2. Search for the API service you wish to enable, the "Google Drive API", and click "Enable"
+3. Go to APIs and Services > Credentials and click “+ Create Credentials” and select “Service Account”
+4. Enter a name for the service account, i.e. “Google Drive Service Account”.
+5. Change the email to something you’ll recognize, i.e. “gd-api-service-account@gmail.com”.
+6. Click “Create and Continue” and select a role, i.e. Basic > Viewer, then click “Done”.
+7. Copy the email address created, i.e. gsc-api-service-account@xxxxxxxxxxx.iam.gserviceaccount.com
+8. In Credentials > Service Accounts click the email address added
+9. Click “Keys” > “Add key” > “Create new key” > “JSON” > “Create”
+10. Download the key and give it a name to identify what it does, i.e. mysite-client-secrets.json
 
 ## How to Call
 
