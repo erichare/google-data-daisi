@@ -86,7 +86,7 @@ def st_ui():
 
         gds = pyd.Daisi("erichare/Google Spreadsheets")
 
-        with open("{service_account}", "r") as my_f:
+        with open("{service_account.name}", "r") as my_f:
             result = gds.store_in_gs("{f_name}", email="{email}", service_account=my_f.read(), title="{title}", append={append}).value
         
         result
