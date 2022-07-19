@@ -75,6 +75,12 @@ def st_ui():
         title = st.text_input('Spreadsheet Title', 'My Spreadsheet from Daisi')
         append = st.checkbox("Append to Sheet?", False)
 
+        st.markdown("***")
+
+        button = st.button('Load Google Spreadsheet Data')
+
+        st.markdown("***")
+
     f_name = ""
     if uploaded_file:
         f_name = uploaded_file.name
@@ -97,12 +103,13 @@ def st_ui():
         ```
         """)
 
-    if uploaded_file and email and service_account:
-        if st.button('Load Google Spreadsheet Data'):
-            with st.spinner("Communicating with Google API, please wait..."):
-                result = store_in_gs(uploaded_file, email, service_account, title=title, append=append)
+    if button and uploaded_file and email and service_account:
+        with st.spinner("Communicating with Google API, please wait..."):
+            result = store_in_gs(uploaded_file, email, service_account, title=title, append=append)
 
-                st.markdown(f"[Click Here]({result}) to view your Google Sheet!")
+            st.markdown(f"[Click Here]({result}) to view your Google Sheet!")
+
+    
 
 if __name__ == "__main__":
     st_ui()
